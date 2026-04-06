@@ -1,10 +1,7 @@
-sequenceDiagram
-    participant browser
-    participant server
-
-    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/new_note
-    activate server
-    server-->>browser: HTML document
-    deactivate server
-
-    Note right of browser: El navegador comienza a renderizar el HTML
+```mermaid
+  graph TD;
+      A-->B;
+      A-->C;
+      B-->D;
+      C-->D;
+```
