@@ -3,16 +3,9 @@ sequenceDiagram
     participant browser
     participant server
 
-    browser->>server: POST https://studies.cs.helsinki.fi/exampleapp/new_note
+    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/spa
     activate server
-    server-->>browser: redirect to https://studies.cs.helsinki.fi/exampleapp/notes
-    deactivate server
-
-    Note left of server: The server gets the POST request, updates the list and redirect the user to /exampleapp/notes
-
-    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/notes
-    activate server
-    server-->>browser: the html file
+    server-->>browser: the HTML document
     deactivate server
 
     browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/main.css
@@ -20,7 +13,7 @@ sequenceDiagram
     server-->>browser: the CSS file
     deactivate server
 
-    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/main.js
+    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/spa.js
     activate server
     server-->>browser: the JavaScript file
     deactivate server
